@@ -22,7 +22,7 @@
 #define FILE_CUT_SILENCE_BEFORE_ACTIVE_MS 300
 
 // 最小的音频切分长度，即每个切分后音频文件不少于这个时长，最后一个除外
-#define FILE_CUT_MIN_MS  (10 * 1000)
+#define FILE_CUT_MIN_MS  (30 * 1000)
 
 // 最大的音频切分长度，即每个切分后音频文件不多于这个时长
 #define FILE_CUT_MAX_MS  (60 * 1000)

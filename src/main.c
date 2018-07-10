@@ -12,10 +12,14 @@ int add_period_activity(struct periods *per, int is_active, int is_last);
 
 //int add_cut_file_activity(struct cut_info *cut, int is_active, int is_last);
 
-int main() {
-    const char filename[] = "pcm/16k_1.pcm"; // 读取的文件
-    const char output_filename_prefix[] = "16k_1.pcm"; // 保存的文件名
-    const char output_dir[] = "output_pcm"; // 保存的目录
+int main(int argc, char* argv[]) {
+    if (argc < 4) {
+        fprintf(stderr, "usage: vad-demo input-file output_filename_prefix output_dir \n");
+        return 2;
+    }
+    char* filename = argv[1]; // 读取的文件
+    char* output_filename_prefix = argv[2]; // 保存的文件名
+    char* output_dir = argv[3]; // 保存的目录
     FILE *fp = fopen(filename, "rb");
     if (fp == NULL) {
         fprintf(stderr, "%s does not exist\n", filename);
